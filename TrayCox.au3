@@ -149,15 +149,14 @@ EndFunc
 Func _Info()
 	Local $file = @ScriptFullPath
 	Local $sName = _Read_File_Properties($file, 0)
-	Local $sVersion = _Read_File_Properties($file, 166) ; WIN_7 = 156
-	Local $sCompiler = _Read_File_Properties($file, 298) ; WIN_7 = 271
+	Local $sVersion = _Read_File_Properties($file, 156)
+	Local $sCompiler = _Read_File_Properties($file, 271)
 	Local $sBeschreibung = _Read_File_Properties($file, 34)
 	Local $sErstellt = _Read_File_Properties($file, 4)
 	Local $sGroesse = _Read_File_Properties($file, 1)
 	Local $sCopyright = _Read_File_Properties($file, 25)
-	Local $sPfad = _Read_File_Properties($file, 194) ; WIN_7 = 177
-;~ 	MsgBox(0, 'Programm-Info', "Name:" & @TAB & @TAB & $sName & @CRLF & "Version:" & @TAB & @TAB & $sVersion & @CRLF & "Compiler:" & @TAB & @TAB & $sCompiler & @CRLF & "Beschreibung:" & @TAB & $sBeschreibung & @CRLF & "Erstellt:" & @TAB & @TAB & $sErstellt & @CRLF & "Gr" & Chr(0xF6) & "sse:" & @TAB & @TAB & $sGroesse & @CRLF & "Copyright:" & @TAB & $sCopyright & @CRLF & "Pfad:" & @TAB & @TAB & $sPfad)
-	MsgBox(0, 'Programm-Info', "Dateiname:" & @CRLF & $sName & @CRLF & @CRLF & "File-Version:" & @CRLF & $sVersion & @CRLF & @CRLF & "AutoIt-Version:" & @CRLF & $sCompiler & @CRLF & @CRLF & "Beschreibung:" & @CRLF & $sBeschreibung & @CRLF & @CRLF & "Erstelldatum:" & @CRLF & $sErstellt & @CRLF & @CRLF & "Dateigr" & Chr(0xF6) & "sse:" & @CRLF & $sGroesse & @CRLF & @CRLF & "Copyright:" & @CRLF & $sCopyright & @CRLF & @CRLF & "Dateipfad:" & @CRLF & $sPfad)
+	Local $sPfad = _Read_File_Properties($file, 177)
+	MsgBox(0, 'Programm-Info', "Name:" & @TAB & @TAB & $sName & @CRLF & "Version:" & @TAB & @TAB & $sVersion & @CRLF & "Compiler:" & @TAB & @TAB & $sCompiler & @CRLF & "Beschreibung:" & @TAB & $sBeschreibung & @CRLF & "Erstellt:" & @TAB & @TAB & $sErstellt & @CRLF & "Gr" & Chr(0xF6) & "sse:" & @TAB & @TAB & $sGroesse & @CRLF & "Copyright:" & @TAB & $sCopyright & @CRLF & "Pfad:" & @TAB & @TAB & $sPfad)
 EndFunc
 
 Func _Read_File_Properties($sPassed_File_Name, $iNumber_of_Property)
